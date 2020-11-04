@@ -27,21 +27,13 @@ fatigue = wholeTable(:,12);
 % figure out the order of an AR model
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% ACF Plot for Y = momWakeups %%%
-[acf, ACFlags, ACFbounds] = autocorr(momWakeups{:,:});
-autocorr(momWakeups{:,:});
-figure;
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% given that the acf plot does not shut off (turn to 0) after some lag q, 
-% this tells us that it is NOT a good fit for an MA(q) model. 
-% will have to further process this "momWakeups" data array to
-% work with it.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% IMPORTANT: HAVE ONE SCRIPT UNCOMMENTED AT A TIME TO KNOW WHAT
+%%%%%%%%%%% YOURE LOOKING AT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% PACF Plot for Y = momWakeups %%%
-[pacf, PACFlags, PACFbounds] = parcorr(momWakeups{:,:});
-parcorr(momWakeups{:,:});
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% given that the pacf plot does shut off (turn to 0) after some lag
-% PACFlags, this tell us that it is a good fit for an AR(q) model.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% generates ACF and PACF for momWakeups
+ACF_PACF_momWakeups; % refer to .m file mentioned for details
+
+% generates ACF and PACF for momTotalNigthSleep
+ACF_PACF_momTotalNightSleep; % refer to .m file mentioned for details
