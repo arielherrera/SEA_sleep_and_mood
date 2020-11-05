@@ -1,6 +1,12 @@
 %%% Author: Ariel Herrera %%%
 %%% Date: Nov 4, 2020 %%%
-% Here we will be processing and analyzing data to create a simple AR model
+% Here we will be processing and analyzing data to create a simple ARIMA model
+% first must construct ACF and PACF plots for each data set (from momWakeups to Fatigue)
+% having these ACFs and PACFs will help guide us in determining the order of the 
+% AR and MA models needed to construct the ARIMA. 
+% If you, as the reader, do not understand what a function is used for, please refer to 
+% the mathworks website by googling the function name, they have a vast library and 
+% (in my opinion) great documentation. 
 
 wholeTable = readtable('sleepMoodData.xlsx', 'Range', 'B2:M120', 'ReadVariableNames', false);
 day = wholeTable(:,1);

@@ -5,7 +5,7 @@
 
 %%% ACF Plot for Y = momWakeups %%%
 [momWakeupsACF, momWakeupsACFlags, momWakeupsACFbounds] = autocorr(momWakeups{:,:});
-autocorr(momWakeups{:,:});
+autocorr(momWakeups{:,:}); % this syntax means I convert a table to a matrix by accessing the values of the table and thus making "momWakeups{:,:}" into a matrix, equivalent to function: "table2array"
 figure; % makes sure plot doesn't vanish after calling another plot function 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % given that the acf plot does not shut off (turn to 0) after some lag q, 
