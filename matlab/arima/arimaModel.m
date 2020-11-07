@@ -15,13 +15,13 @@ momWakeups = wholeTable(:,3); % TODO: mess around with data, right now it is now
 % I am seeing too much variability... consider using ARCH(p) model for this
 momTotalNightSleep = wholeTable(:,4);
 momSleepQuality = wholeTable(:,5);
-babyPickups = wholeTable(:,6);
-babyLongestSleep = wholeTable(:,7);
-babyTotalNightSleep = wholeTable(:,8);
-positiveAffect = wholeTable(:,9);
-negativeAffect = wholeTable(:,10);
+babyPickups = wholeTable(:,6); % AR for this does not become zero during whole 20 lags
+babyLongestSleep = wholeTable(:,7); % AR for this does not become zero during whole 20 lags
+babyTotalNightSleep = wholeTable(:,8); % AR for this does not become zero during whole 20 lags
+positiveAffect = wholeTable(:,9); % Interesting AR plots, includes many lags, but does have some as zero
+negativeAffect = wholeTable(:,10); % Interesting AR plots, includes many lags, but does have some as zero
 sadness = wholeTable(:,11);
-fatigue = wholeTable(:,12);
+fatigue = wholeTable(:,12); % 7 out of 20 lags were zero
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%% data is ready to experiment with %%%%%%%%%%%
@@ -36,10 +36,37 @@ fatigue = wholeTable(:,12);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%% IMPORTANT: HAVE ONE SCRIPT UNCOMMENTED AT A TIME TO KNOW WHAT
 %%%%%%%%%%% YOURE LOOKING AT
+%%%%%%%%%%% ***** UNCOMMENT THE SCRIPT YOU'D LIKE TO RUN *****
+%%%%%%%%%%% ***** REMEMBER TO HAVE THE SCRIPT IN THIS SAME DIRECTORY *****
+%%%%%%%%%%% ***** OR ADD PATH TO THIS FILE OF SCRIPT LOCATION *****
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % generates ACF and PACF for momWakeups
-ACF_PACF_momWakeups; % refer to .m file mentioned for details
+%ACF_PACF_momWakeups; % refer to .m file mentioned for details
 
 % generates ACF and PACF for momTotalNigthSleep
-ACF_PACF_momTotalNightSleep; % refer to .m file mentioned for details
+%ACF_PACF_momTotalNightSleep;
+
+% generates ACF and PACF for momTotalNigthSleep
+%ACF_PACF_momSleepQuality;
+
+% generates ACF and PACF for momTotalNigthSleep
+%ACF_PACF_babyPickups;
+
+% generates ACF and PACF for momTotalNigthSleep
+%ACF_PACF_babyLongestSleep;
+
+% generates ACF and PACF for momTotalNigthSleep
+%ACF_PACF_babyTotalNightSleep;
+
+% generates ACF and PACF for momTotalNigthSleep
+%ACF_PACF_positiveAffect;
+
+% generates ACF and PACF for momTotalNigthSleep
+%ACF_PACF_negativeAffect;
+
+% generates ACF and PACF for momTotalNigthSleep
+%ACF_PACF_sadness;
+
+% generates ACF and PACF for momTotalNigthSleep
+%ACF_PACF_fatigue;
