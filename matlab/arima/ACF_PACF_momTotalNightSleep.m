@@ -3,7 +3,7 @@
 
 %%%%%%%%%%%%%%%%%% ACF and PACF for momTotalNightSleep %%%%%%%%%%%%%%%%%%
 
-%%% ACF Plot for Y = momWakeups %%%
+%%% ACF Plot for Y = momTotalNightSleep %%%
 [momTotalNightSleepACF, momTotalNightSleepACFlags, momTotalNightSleepACFbounds] = autocorr(momWakeups{:,:});
 autocorr(momTotalNightSleep{:,:}); % this variable is from arimaModel.m, since we 
 % use this script after that variable is declared in the parent script, we
@@ -14,9 +14,10 @@ figure; % makes sure plot doesn't vanish after calling another plot function
 % this tells us that it IS a good fit for an MA(q) model. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% PACF Plot for Y = momWakeups %%%
+%%% PACF Plot for Y = momTotalNightSleep %%%
 [momTotalNightSleepPACF, momTotalNightSleepPACFlags, momTotalNightSleepPACFbounds] = parcorr(momWakeups{:,:});
 parcorr(momTotalNightSleep{:,:});
+figure;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % given that the pacf plot does shut off (turn to 0) after some lag
 % momTotalNightSleepPACFlags, this tell us that it is a good fit for an AR(q) model.
@@ -26,3 +27,10 @@ parcorr(momTotalNightSleep{:,:});
 % This ACF and PACF look promising for the momTotalNightSleep data array
 % will have to run AR and MA models next!!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%% X = day, Y = momTotalNightSleep Plot %%%%%%%%%%%%%%%%%%
+
+plot(day{:,:},momTotalNightSleep{:,:});
+title('ACF');
+xlabel('days');
+ylabel('momTotalNightSleep')

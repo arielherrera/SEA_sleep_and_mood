@@ -14,6 +14,7 @@ figure; % makes sure plot doesn't vanish after calling another plot function
 %%% PACF Plot for Y = babyLongestSleep %%%
 [babyLongestSleepPACF, babyLongestSleepPACFlags, babyLongestSleepPACFbounds] = parcorr(babyLongestSleep{:,:});
 parcorr(babyLongestSleep{:,:});
+figure;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FILL IN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -21,3 +22,10 @@ parcorr(babyLongestSleep{:,:});
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % IDEAS ON HOW TO PROCEED GIVEN ACF AND PACF PLOTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%% X = day, Y = babyLongestSleep Plot %%%%%%%%%%%%%%%%%%
+
+plot(day{:,:},babyLongestSleep{:,:});
+title('ACF');
+xlabel('days');
+ylabel('babyLongestSleep')

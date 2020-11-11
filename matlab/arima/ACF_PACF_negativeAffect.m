@@ -14,6 +14,7 @@ figure; % makes sure plot doesn't vanish after calling another plot function
 %%% PACF Plot for Y = negativeAffect %%%
 [negativeAffectPACF, negativeAffectPACFlags, negativeAffectPACFbounds] = parcorr(negativeAffect{:,:});
 parcorr(negativeAffect{:,:});
+figure;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FILL IN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -21,3 +22,10 @@ parcorr(negativeAffect{:,:});
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % IDEAS ON HOW TO PROCEED GIVEN ACF AND PACF PLOTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%% X = day, Y = negativeAffect Plot %%%%%%%%%%%%%%%%%%
+
+plot(day{:,:},negativeAffect{:,:});
+title('ACF');
+xlabel('days');
+ylabel('negativeAffect')

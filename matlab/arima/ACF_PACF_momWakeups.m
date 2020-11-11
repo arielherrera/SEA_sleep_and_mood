@@ -17,7 +17,15 @@ figure; % makes sure plot doesn't vanish after calling another plot function
 %%% PACF Plot for Y = momWakeups %%%
 [momWakeupsPACF, momWakeupsPACFlags, momWakeupsPACFbounds] = parcorr(momWakeups{:,:});
 parcorr(momWakeups{:,:});
+figure;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % given that the pacf plot does shut off (turn to 0) after some lag
 % PACFlags, this tell us that it is a good fit for an AR(q) model.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%% X = day, Y = momWakeups Plot %%%%%%%%%%%%%%%%%%
+
+plot(day{:,:},momWakeups{:,:});
+title('ACF');
+xlabel('days');
+ylabel('momWakeups')

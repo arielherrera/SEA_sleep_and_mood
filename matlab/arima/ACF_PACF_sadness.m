@@ -14,6 +14,7 @@ figure; % makes sure plot doesn't vanish after calling another plot function
 %%% PACF Plot for Y = sadness %%%
 [sadnessPACF, sadnessPACFlags, sadnessPACFbounds] = parcorr(sadness{:,:});
 parcorr(sadness{:,:});
+figure;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FILL IN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -21,3 +22,10 @@ parcorr(sadness{:,:});
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % IDEAS ON HOW TO PROCEED GIVEN ACF AND PACF PLOTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%% X = day, Y = sadness Plot %%%%%%%%%%%%%%%%%%
+
+plot(day{:,:},sadness{:,:});
+title('ACF');
+xlabel('days');
+ylabel('sadness')
